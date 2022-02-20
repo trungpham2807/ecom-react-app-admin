@@ -45,7 +45,7 @@ export default function Home() {
   useEffect (() => {
     const getSaleStats = async () => {
       try {
-        const res = await userRequest.get("/orders/monthlysales");
+        const res = await userRequest.get("/orders/income");
         console.log("res", res);
         const list = res.data.sort((a, b) => {
           return a._id - b._id
@@ -67,7 +67,7 @@ export default function Home() {
    
       <FeaturedInfo />
       <Chart data={userStats} title="User Analytics" grid dataKey="Active User"/>
-      <Chart data={saleStats} title="Sales Analytics" grid dataKey="Recorded Sales"/>
+      {/* <Chart data={saleStats} title="Sales Analytics" grid dataKey="Recorded Sales"/> */}
 
     </div>
   );
