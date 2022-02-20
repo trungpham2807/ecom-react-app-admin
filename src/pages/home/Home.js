@@ -27,7 +27,7 @@ export default function Home() {
   useEffect (() => {
     const getStats = async () => {
       try {
-        const res = await userRequest.get("/users/stats");
+        const res = await userRequest.get("/user/stats");
         const list = res.data.sort((a, b) => {
           return a._id - b._id
         });
